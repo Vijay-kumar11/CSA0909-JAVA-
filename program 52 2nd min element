@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class R192211884 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        if (n < 2) {
+            System.out.println("Array must have at least 2 elements.");
+            return;
+        }
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) arr[i] = scanner.nextInt();
+        int smallest = Integer.MAX_VALUE;
+        int secondSmallest = Integer.MAX_VALUE;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] < smallest) {
+                secondSmallest = smallest;
+                smallest = arr[i];
+            } else if (arr[i] < secondSmallest && arr[i] != smallest) {
+                secondSmallest = arr[i];
+            }
+        }
+        if (secondSmallest == Integer.MAX_VALUE) {
+            System.out.println("There is no second smallest element (all elements might be equal).");
+        } else {
+            System.out.println("The second smallest element is: " + secondSmallest);
+        }
+        scanner.close();
+    }
+}

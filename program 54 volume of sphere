@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class R192211884 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the radius of the sphere: ");
+        double radius = scanner.nextDouble();
+        if (radius < 0) {
+            System.out.println("Radius cannot be negative.");
+            return;
+        }
+        double volume = (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+        System.out.printf("The volume of the sphere with radius %.2f is %.2f%n", radius, volume);
+        scanner.close();
+    }
+}

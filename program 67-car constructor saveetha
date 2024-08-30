@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class R192211884 {
+    private String make;
+    private String model;
+    private int year;
+    public R192211884 (String make, String model, int year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+    public void printCarDetails() {
+        System.out.println("Car Make: " + make);
+        System.out.println("Car Model: " + model);
+        System.out.println("Car Year: " + year);
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the make of the car:\n");
+        String make = scanner.nextLine();
+        System.out.print("Enter the model of the car:\n");
+        String model = scanner.nextLine();
+        System.out.print("Enter the year of the car:\n");
+        int year = scanner.nextInt();
+        R192211884 car = new R192211884 (make, model, year);
+        car.printCarDetails();
+        scanner.close();
+    }
+}
